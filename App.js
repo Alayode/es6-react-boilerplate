@@ -1,7 +1,7 @@
 import React from 'react';
 class App extends React.Component {
 	render(){
-		 return <Button>React</Button>
+		 return <Button> <Heart/> React</Button>
 	}
 }
 class Button extends React.Component {
@@ -9,4 +9,7 @@ class Button extends React.Component {
 		return <button>{this.props.children}</button>
 	}
 }
+
+const Heart = () => <span className="glyphicon glyphicon-heart"></span>
+
 export default App
