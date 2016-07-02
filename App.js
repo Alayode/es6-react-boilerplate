@@ -1,15 +1,24 @@
-import React from 'react';
+import React from 'React';
+import ReactDOM from 'react-dom';
+
 class App extends React.Component {
-	render(){
-		 return <Button> <Heart/> React</Button>
+	constructor(){
+		super();
+		this.state = { val: 0 };
+		this.update = this.update.bind(this);
+	}
+	update(){
+	this.setState({val: this.state.val + 1})
+}
+componentWillMount(){
+	console.log('mountingNow')
+}
+render(){
+	console.log('rendering!')
+	return <button onClick={this.update}>{this.state.val}</button>
+}
+	componentDidMount(){
+		console.log('mounted')
 	}
 }
-class Button extends React.Component {
-	render(){
-		return <button>{this.props.children}</button>
-	}
-}
-
-const Heart = () => <span className="glyphicon glyphicon-heart"></span>
-
 export default App
